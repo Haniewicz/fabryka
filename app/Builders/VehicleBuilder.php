@@ -2,18 +2,6 @@
 
 namespace App\Builders;
 
-use App\Builders\Car;
-use App\Builders\Truck;
-use App\Builders\Bus;
-
-
-enum vehicle_type: string
-{
-    case truck = 'truck';
-    case car = 'car';
-    case bus = 'bus';
-}
-
 class VehicleBuilder {
     private object $vehicle;
 

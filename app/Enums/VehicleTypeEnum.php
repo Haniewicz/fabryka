@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Builders;
+namespace App\Enums;
 
 use App\Builders\Car;
 use App\Builders\Truck;
