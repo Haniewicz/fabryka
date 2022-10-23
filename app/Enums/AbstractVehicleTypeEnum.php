@@ -2,6 +2,7 @@
 
 namespace App\Enums;
 
+use App\AbstractBuilders\AbstractVehicleBuilder;
 use App\AbstractBuilders\Car;
 use App\AbstractBuilders\Bus;
 use App\AbstractBuilders\Truck;
@@ -14,7 +15,7 @@ enum AbstractVehicleTypeEnum: string
     case truck = 'truck';
     case bus = 'bus';
 
-    public static function class(string $VehicleType): object
+    public static function class(string $VehicleType): AbstractVehicleBuilder
     {
         return match(self::from($VehicleType))
         {
