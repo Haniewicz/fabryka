@@ -4,25 +4,25 @@ namespace App\Builders;
 
 class Truck implements VehicleBuilderInterface
 {
-    private string $carosery_color = 'red';
-    private int $doors_amount = 2;
-    private int $wheel_size = 19;
+    private string $caroseryColor = 'red';
+    private int $doorsAmount = 2;
+    private int $wheelSize = 19;
 
-    public function setCaroseryColor(string $carosery_color): self
+    public function setCaroseryColor(string $caroseryColor): self
     {
-        $this->carosery_color = $carosery_color;
+        $this->caroseryColor = $caroseryColor;
         return $this;
     }
 
-    public function setDoorsAmount(int $doors_amount): self
+    public function setDoorsAmount(int $doorsAmount): self
     {
-        $this->doors_amount = $doors_amount;
+        $this->doorsAmount = $doorsAmount;
         return $this;
     }
 
-    public function setWheelSize(int $wheel_size): self
+    public function setWheelSize(int $wheelSize): self
     {
-        $this->wheel_size = $wheel_size;
+        $this->wheelSize = $wheelSize;
         return $this;
     }
 
@@ -30,8 +30,8 @@ class Truck implements VehicleBuilderInterface
     {
         return [
             'type' => 'truck',
-            'carosery_color' => $this->carosery_color,
-            'doors_amount' => $this->doors_amount,
-            'wheel_size' => $this->wheel_size];
+            'carosery_color' => $this->caroseryColor,
+            'doors_amount' => $this->doorsAmount,
+            'wheel_size' => $this->wheelSize];
     }
 }

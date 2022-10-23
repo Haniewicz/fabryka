@@ -3,10 +3,12 @@ namespace App\Builders;
 
 
 interface VehicleBuilderInterface {
-    public function setCaroseryColor(string $carosery_color): self;
+    public function setCaroseryColor(string $caroseryColor): self;
 
-    public function setDoorsAmount(int $doors_amount): self;
+    public function setDoorsAmount(int $doorsAmount): self;
 
-    public function setWheelSize(int $wheel_size): self;
+    public function setWheelSize(int $wheelSize): self;
+
+    public function getVehicle(): array;
 
 }

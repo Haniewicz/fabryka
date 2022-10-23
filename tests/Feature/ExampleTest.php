@@ -10,9 +10,7 @@ class ExampleTest extends TestCase
 
     public function testIfApplicationReturnsSuccessfulResponseWhenPassedArgumentsProperly(): void
     {
-        $response = $this->withHeaders([
-            'Accept' => 'application/json',
-        ])->post('/api/test', [
+        $response = $this->postJson('/api/test', [
             'vehicle_type' => 'car',
             'carosery_color' => 'blue',
             'doors_amount' => 4,
@@ -25,9 +23,7 @@ class ExampleTest extends TestCase
 
     public function testIfApplicationReturnsErrorResponseWhenWrongVehicleTypePassed(): void
     {
-        $response = $this->withHeaders([
-            'Accept' => 'application/json',
-        ])->post('/api/test', [
+        $response = $this->postJson('/api/test', [
             'vehicle_type' => 'cat',
             'carosery_color' => 'blue',
             'doors_amount' => 4,
@@ -40,9 +36,7 @@ class ExampleTest extends TestCase
 
     public function testIfApplicationReturnsDefaultPropertiesOfVehicleIfNonePassed(): void
     {
-        $response = $this->withHeaders([
-            'Accept' => 'application/json',
-        ])->post('/api/test', [
+        $response = $this->postJson('/api/test', [
            'vehicle_type' => 'car'
         ]);
 
@@ -52,9 +46,7 @@ class ExampleTest extends TestCase
 
     public function testIfValidationWorks(): void
     {
-        $response = $this->withHeaders([
-            'Accept' => 'application/json',
-        ])->post('/api/test', [
+        $response = $this->postJson('/api/test', [
             'carosery_color' => 2,
             'doors_amount' => 'hey',
             'wheel_size' => 'yo',

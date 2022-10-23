@@ -16,3 +16,4 @@ Use App\Http\Controllers\TestController;
 */
 
 Route::post('/test', [TestController::class, 'index']);
+Route::post('/abstract', [TestController::class, 'abstract']);

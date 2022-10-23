@@ -1,32 +1,23 @@
 <?php
 
 namespace App\Builders;
+use App\Builders\VehicleBuilderInterface;
 
 class VehicleBuilder {
-    private object $vehicle;
 
+    private VehicleBuilderInterface $vehicle;
 
-    public function setVehicle(object $vehicle_type): self
+    public function buildVehicle(
+        VehicleBuilderInterface $vehicle,
+        string $caroseryColor,
+        int $doorsAmount,
+        int $wheelSize): self
     {
-        $this->vehicle = $vehicle_type;
-        return $this;
-    }
+        $this->vehicle = $vehicle;
+        $this->vehicle->setCaroseryColor($caroseryColor)
+            ->setDoorsAmount($doorsAmount)
+            ->setWheelSize($wheelSize);
 
-    public function setCaroseryColor(string $carosery_color): self
-    {
-        $this->vehicle->setCaroseryColor($carosery_color);
-        return $this;
-    }
-
-    public function setDoorsAmount(int $doors_amount): self
-    {
-        $this->vehicle->setDoorsAmount($doors_amount);
-        return $this;
-    }
-
-    public function setWheelSize(int $wheel_size): self
-    {
-        $this->vehicle->setWheelSize($wheel_size);
         return $this;
     }
 
